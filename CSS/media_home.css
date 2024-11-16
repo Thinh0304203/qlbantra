@@ -1,0 +1,132 @@
+@media screen and (max-width: 1200px) {
+    .shop .box-container {
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    }
+
+    .services img {
+        width: 40%; /* Ảnh nhỏ hơn một chút trên các thiết bị nhỏ hơn */
+    }
+
+    .thumb .box-container {
+        flex-direction: column; /* Đặt các box thành cột trên các màn hình nhỏ */
+    }
+
+    .brand .box-container {
+        justify-content: center; /* Căn giữa các box */
+    }
+}
+
+/* Khi màn hình có độ rộng dưới 992px (Máy tính bảng hoặc các thiết bị có màn hình nhỏ hơn) */
+@media screen and (max-width: 992px) {
+    .shop .row {
+        flex-direction: column; /* Xếp các phần tử theo chiều dọc */
+        align-items: center;
+    }
+
+    .shop .box-container {
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); /* Box nhỏ hơn nữa */
+    }
+
+    .services img {
+        width: 50%;
+    }
+
+    .services {
+        padding: 2rem 0; /* Giảm padding trên các màn hình nhỏ */
+    }
+
+    .thumb .box-container {
+        flex-direction: column;
+        align-items: center; /* Căn giữa */
+    }
+
+    .brand .box-container {
+        flex-direction: column;
+        justify-content: center; /* Các box brand xếp thành cột */
+    }
+}
+
+/* Khi màn hình có độ rộng dưới 768px (Smartphone hoặc các thiết bị di động nhỏ) */
+@media screen and (max-width: 768px) {
+    .shop {
+        padding: 1.5rem 0.5rem; /* Giảm padding cho màn hình nhỏ */
+    }
+
+    .shop .box-container {
+        grid-template-columns: 1fr; /* Các box xếp theo chiều dọc */
+    }
+
+    .services img {
+        width: 70%; /* Ảnh sẽ rộng hơn trên màn hình điện thoại */
+    }
+
+    .services {
+        padding: 1rem 0;
+    }
+
+    .thumb .box-container {
+        flex-direction: column;
+        align-items: center; /* Căn giữa tất cả các phần tử */
+    }
+
+    .brand .box-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* Điều chỉnh cho các phần tử khác */
+    .shop .btn {
+        width: 100%; /* Đảm bảo nút shop có chiều rộng 100% trên màn hình nhỏ */
+        left: 0;
+        bottom: -10%;
+    }
+
+    .shop-category .detail h1 {
+        font-size: 1.5em; /* Giảm kích thước chữ */
+    }
+
+    .shop-category .detail span {
+        font-size: 1.1rem; /* Giảm kích thước chữ */
+    }
+
+    .services .box {
+        width: 90%; /* Đảm bảo các box nhỏ lại một chút */
+    }
+
+    .brand .box img {
+        width: 80%; /* Ảnh thương hiệu nhỏ lại trên màn hình nhỏ */
+    }
+}
+
+/* Khi màn hình có độ rộng dưới 480px (Điện thoại di động nhỏ) */
+@media screen and (max-width: 480px) {
+    .shop .box-container {
+        grid-template-columns: 1fr;
+        gap: 0.5rem; /* Giảm khoảng cách giữa các box */
+    }
+
+    .services img {
+        width: 90%; /* Ảnh sẽ rất nhỏ trên các điện thoại nhỏ */
+    }
+
+    .shop .btn {
+        width: 100%; /* Đảm bảo nút Shop now có chiều rộng 100% */
+        bottom: -5%;
+    }
+
+    .services h3 {
+        font-size: 1.5rem; /* Giảm kích thước font */
+    }
+
+    .thumb .box-container .box {
+        width: 100%; /* Các box sẽ chiếm toàn bộ chiều rộng màn hình */
+    }
+
+    .brand .box-container {
+        flex-direction: column;
+    }
+
+    .brand .box img {
+        width: 80%; /* Ảnh nhỏ lại */
+    }
+}

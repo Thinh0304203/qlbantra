@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #87a243;
+    --light-green: #e0ffcd;
+    --box-shodow: 0 0 10px rgba(0 0 0/15%);
+
+}
+
+html {
+    font-size: 16px;
+    --ms-overflow-style: scrollbar;
+    font-family: sans-serif;
+    --ms-text-size-adjust: 100%;
+    --webkit-text-size-adjust: 100%;
+}
+
+/* chen them anh */
+body {
+
+    background-image:url('image/body-bg.jpg') ;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+.main {
+    width: 85vw;
+    background: #fff;
+    box-shadow: 0 2px 6px 0 rgb(0 0 0 / 10%);
+    margin: 1rem auto;
+    margin-top: 10rem;
+    padding: 2%;
+}
+
+.title p {
+    text-transform: capitalize;
+}
+
+ul {
+    list-style: none;
+}
+
+.btn {
+    line-height: 2; /* Chiều cao dòng gấp đôi kích thước font */
+    background-color: #e0ffcd;
+    padding: 5px;
+    display: inline-block;
+    border-radius: 30px;
+    color: #000;
+    text-transform: capitalize; 
+    /* viết hoa chữ cái đầu */
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    /* transition: color .3s ease; */
+
+
+}
+
+.btn::before {
+    position: relative;
+    content: '';
+    left: 0;
+    top: 0;
+    background: var(--green);
+    color: #fff;
+    height: 100%;
+    width: 0;
+    z-index: -1;
+    /* transition: width .3s ease; */
+}
+.empty,
+.message {
+    border-radius: .5rem;
+    background: var(--green);
+    padding: 1.5rem;
+    text-align: center;
+    font-weight: 100%;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    line-height: 2;
+    color: #fff;
+}
+
+input,
+textarea,
+button,
+select {
+    background: transparent;
+    border-radius: 20px;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    width: 100%;
+    margin: .6rem 0;
+    box-shadow: var(--box-shodow);
+}
+
+input[type='submit'] {
+    cursor: pointer;
+}
+
+.option {
+    background-color: var(--green);
+    cursor: pointer;
+    padding: 1rem;
+}
+
+sup {
+    color: red;
+}
+
+label {
+    text-transform: uppercase;
+    color: var(--green);
+    margin: 1rem 0;
+
+}
+
+h3 {
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+
+.form-container {
+    width: 60vw;
+    border: 2px solid var(#fff);
+    border-radius: 8px;
+    box-shadow: var(--box-shodow);
+    margin: 0 auto;
+    padding: 30px;
+}
+.box-container{
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(30rem,1fr));
+    align-items: center;
+    justify-content: center;
+
+}
+.box-container .box{
+    margin: 1rem;
+}
+.heading{
+    text-align: center;
+    text-transform: uppercase;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* scroll */
