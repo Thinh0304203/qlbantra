@@ -51,13 +51,6 @@ if (isset($_POST['add_to_cart'])) {
     <link rel="stylesheet" href="../style.css">
     <style>
         /* Style cho trang chính */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f6f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
 
         .main {
             padding: 20px;

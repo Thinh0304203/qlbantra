@@ -2,6 +2,10 @@
 include('../Model/connect.php');
 session_start();
 
+// Kết nối với lớp xử lý sản phẩm
+include('../Model/control_sp.php');
+$get_data = new data_sp();
+
 // Kiểm tra nếu người dùng đã đăng nhập
 if (!isset($_SESSION['user_id'])) {
     header('location:login.php');
@@ -9,12 +13,8 @@ if (!isset($_SESSION['user_id'])) {
 }
 $user_id = $_SESSION['user_id'];  // Lấy user_id từ session
 
-// Kết nối với lớp xử lý sản phẩm
-include('../Model/control_sp.php');
-$get_data = new data_sp();
-
 // Lấy từ khóa tìm kiếm từ URL (nếu có)
-$product_name = $_SESSION['timkiem'];
+$product_name = isset($_GET['timkiem']) ? $_GET['timkiem'] : '';
 
 // Truy vấn sản phẩm theo tên nếu có
 if ($product_name != '') {
@@ -60,7 +60,6 @@ if (isset($_POST['add_to_cart'])) {
     <title>Tìm kiếm sản phẩm</title>
     <link rel="stylesheet" href="../style.css">
     <style>
-        /* Các style cho trang tìm kiếm */
         body {
             font-family: Arial, sans-serif;
             background-color: #f3f6f4;
@@ -182,18 +181,11 @@ if (isset($_POST['add_to_cart'])) {
 <body>
     <?php include 'header.php'; ?>
 
-    <!-- Form Tìm Kiếm -->
-    <!-- <form action="search.php" method="get" class="search-form">
-        <input type="text" name="product_name" placeholder="Tìm kiếm sản phẩm..." value="<?php echo htmlspecialchars($product_name); ?>" required>
-        <button type="submit">Tìm kiếm</button>
-    </form> -->
-
     <div class="main">
         <div class="box-container">
             <?php
             // Kiểm tra và hiển thị sản phẩm
             if (is_array($select) && count($select) > 0) {
-                // Nếu có sản phẩm, hiển thị chúng
                 foreach ($select as $fetch_products) {
             ?>
                     <form action="" method="post" class="box">
@@ -204,7 +196,7 @@ if (isset($_POST['add_to_cart'])) {
                         <input type="hidden" name="product_name" value="<?php echo $fetch_products['ten_sanpham']; ?>">
                         <input type="hidden" name="product_price" value="<?php echo $fetch_products['gia']; ?>">
                         <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
-            
+
                         <div class="btn-group">
                             <button type="submit" name="add_to_cart" class="btn"><i class="fas fa-shopping-cart"></i></button>
                             <button type="button" class="btn"><i class="fas fa-heart"></i></button>

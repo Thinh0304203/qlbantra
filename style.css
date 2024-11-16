@@ -261,146 +261,141 @@
      }
 
      .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        background-color: #f8f9fa;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 10px 20px;
+         background-color: #f8f9fa;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+     }
 
-    .header .logo img {
-        height: 50px;
-    }
+     .header .logo img {
+         height: 50px;
+     }
 
-    .header .navbar {
-        display: flex;
-        align-items: center;
-    }
+     .header .navbar {
+         display: flex;
+         align-items: center;
+     }
 
-    .header .navbar a {
-        margin: 0 15px;
-        text-decoration: none;
-        color: #333;
-        font-weight: 700;
-    }
+     .header .navbar a {
+         margin: 0 15px;
+         text-decoration: none;
+         color: #333;
+         font-weight: 700;
+     }
 
-    .header .navbar .dropdown {
-        position: relative;
-    }
+     .header .navbar .dropdown {
+         position: relative;
+     }
 
-    .header .navbar .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-    }
+     .header .navbar .dropdown-content {
+         display: none;
+         position: absolute;
+         background-color: #f9f9f9;
+         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+         z-index: 1;
+     }
 
-    .header .navbar .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-    }
+     .header .navbar .dropdown-content a {
+         color: black;
+         padding: 12px 16px;
+         text-decoration: none;
+         display: block;
+     }
 
-    .header .navbar .dropdown:hover .dropdown-content {
-        display: block;
-    }
+     .header .navbar .dropdown:hover .dropdown-content {
+         display: block;
+     }
 
-    .header .search-container {
-        display: flex;
-        align-items: center;
-    }
+     .header .search-container {
+         display: flex;
+         align-items: center;
+     }
 
-    .header .search-container input[type="text"] {
-        padding: 5px;
-        font-size: 16px;
-        border: 1px solid #ddd;
-        border-radius: 20px 0 0 20px;
-        width: 200px;
-        outline: none;
-    }
+     .header .search-container input[type="text"] {
+         padding: 5px;
+         font-size: 16px;
+         border: 1px solid #ddd;
+         border-radius: 20px 0 0 20px;
+         width: 200px;
+         outline: none;
+     }
 
-    .header .search-container button {
-        padding: 5px 10px;
-        font-size: 16px;
-        border: none;
-        border-radius: 0 20px 20px 0;
-        cursor: pointer;
-    }
+     .header .search-container button {
+         padding: 5px 10px;
+         font-size: 16px;
+         border: none;
+         border-radius: 0 20px 20px 0;
+         cursor: pointer;
+     }
 
-    .header .search-container button:hover {
-        background-color: greenyellow;
-    }
+     .header .search-container button:hover {
+         background-color: greenyellow;
+     }
 
-    .header .icons {
-        display: flex;
-        align-items: center;
-    }
+     .header .icons {
+         display: flex;
+         align-items: center;
+     }
 
-    .header .icons i {
-        margin: 0 10px;
-        cursor: pointer;
-    }
+     .header .icons i {
+         margin: 0 10px;
+         cursor: pointer;
+     }
 
-    .header .user-box {
-        position: absolute;
-        top: 120%;
-        right: 0;
-        background: #fff;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        border-radius: .5rem;
-        padding: 1rem;
-        text-align: center;
-        width: 20rem;
-        transform: scale(0);
-        transform-origin: top right;
-        line-height: 2;
-    }
+     .header .user-box {
+         position: absolute;
+         top: 120%;
+         right: 0;
+         background: #fff;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+         border-radius: .5rem;
+         padding: 1rem;
+         text-align: center;
+         width: 20rem;
+         transform: scale(0);
+         transform-origin: top right;
+         line-height: 2;
+     }
 
-    .header .user-box .btn {
-        border-radius: .5rem;
-        padding: 0 1.5rem;
-    }
+     .header .user-box .btn {
+         border-radius: .5rem;
+         padding: 0 1.5rem;
+     }
 
-    .logout-btn {
-        background: #000;
-        color: #fff;
-        text-transform: uppercase;
-        width: 11rem;
-        margin: 5rem 0;
-        border-radius: .5rem;
-        padding: .5rem 0;
-    }
+     .logout-btn {
+         background: #000;
+         color: #fff;
+         text-transform: uppercase;
+         width: 11rem;
+         margin: 5rem 0;
+         border-radius: .5rem;
+         padding: .5rem 0;
+     }
 
-    .header .user-box.active {
-        transform: scale(1.0);
-        transition: .2s linear;
-    }
-    
+     .header .user-box.active {
+         transform: scale(1.0);
+         transition: .2s linear;
+     }
+
      /* ------------- home slider section----------- */
      /* ----------------- Home Slider Section ---------------- */
      .home-section {
          position: relative;
-         margin-bottom: 2rem;
+         margin-bottom: 1rem;
      }
 
      /* Slider container */
      .slider-container {
          position: relative;
          width: 100%;
-         /* Chiếm toàn bộ chiều rộng của khung */
          height: 500px;
-         /* Điều chỉnh chiều cao của slider để cân đối hơn */
          overflow: hidden;
-         /* Ẩn các ảnh ngoài khung */
          display: flex;
-         /* Sử dụng flex để dễ dàng căn chỉnh */
          justify-content: center;
-         /* Căn giữa nội dung theo chiều ngang */
          align-items: center;
-         /* Căn giữa nội dung theo chiều dọc */
+
      }
 
      /* Mỗi slide chỉ chứa một ảnh */
@@ -469,60 +464,65 @@
 
      /* ----------------- Thumbnail Section ----------------- */
      .thumb {
-         max-width: 1200px;
-         box-shadow: var(--box-shadow);
-         margin: 2rem auto;
-         padding: 2%;
-     }
-
-     .thumb .box-container {
-         display: grid;
-         grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-         /* Điều chỉnh để cân đối */
-         gap: 1rem;
-     }
-
-     .thumb .box-container .box {
-         text-align: center;
-         line-height: 1.5;
-         background: #fff;
-         padding-bottom: 1rem;
-         color: gray;
-         box-shadow: var(--box-shadow);
-         transition: all 0.3s ease;
-     }
-
-     .thumb .box-container .box:hover {
-         transform: scale(1.05);
-         /* Thêm hiệu ứng phóng to nhẹ khi hover */
-     }
-
-     .thumb .box-container .box img {
-         max-width: 100%;
-         height: auto;
-         transition: all 800ms ease-in-out;
-     }
-
-     .thumb .box-container .box:hover img {
-         transform: rotateY(180deg);
-     }
-
-     .thumb .box-container .box i {
-         color: var(--green);
-         font-size: 4px;
-         line-height: 40px;
-         width: 40px;
-         border-radius: 50%;
-         text-align: center;
-         border: 2px solid var(--green);
-         cursor: pointer;
-     }
-
-     .thumb .box-container .box p {
-         color: #555;
-         margin: 0.5rem;
-     }
-
+        max-width: 1200px; /* Đặt chiều rộng tối đa */
+        margin: 0 auto; /* Canh giữa container */
+        padding: 20px; /* Thêm khoảng trống bên trong */
+    }
+    
+    /* Container cho các box */
+    .thumb .box-container {
+        display: flex; /* Hiển thị các box theo hàng ngang */
+        flex-wrap: wrap; /* Cho phép các box xuống dòng nếu không đủ chỗ */
+        gap: 20px; /* Khoảng cách giữa các box */
+        justify-content: space-between; /* Dàn đều các box theo chiều ngang */
+    }
+    
+    /* Từng box chứa nội dung */
+    .thumb .box-container .box {
+        background: #fff; /* Nền trắng cho mỗi box */
+        border: 1px solid #ddd; /* Viền mỏng, màu xám nhạt */
+        border-radius: 8px; /* Bo góc nhẹ */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+        text-align: center; /* Canh giữa nội dung */
+        padding: 10px; /* Khoảng trống bên trong box */
+        width: calc(25% - 20px); /* Mỗi box chiếm 25% chiều rộng, trừ khoảng cách gap */
+        transition: transform 0.3s ease; /* Hiệu ứng phóng to khi hover */
+    }
+    
+    /* Hover cho box */
+    .thumb .box-container .box:hover {
+        transform: scale(1.05); /* Phóng to box khi hover */
+    }
+    
+    /* Hình ảnh trong box */
+    .thumb .box-container .box img {
+        width: 100%; /* Ảnh chiếm toàn bộ chiều rộng box */
+        height: auto; /* Giữ tỷ lệ ảnh */
+        border-radius: 5px; /* Bo góc nhẹ cho ảnh */
+        margin-bottom: 10px; /* Khoảng cách giữa ảnh và nội dung */
+        transition: all 0.3s ease; /* Hiệu ứng chuyển động mượt */
+    }
+    
+    /* Văn bản trong box */
+    .thumb .box-container .box h3 {
+        font-size: 18px;
+        color: #333;
+        margin: 10px 0;
+    }
+    
+    .thumb .box-container .box p {
+        font-size: 14px;
+        color: #666;
+        margin: 5px 0;
+    }
+    
+    .thumb .box-container .box .price {
+        font-size: 16px;
+        color: #e74c3c; /* Màu đỏ nhấn mạnh giá */
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    
      /* ------------------ Shop Section ------------------ */
      .shop {
          background-image: url('image/bg.jpg');
@@ -973,6 +973,7 @@
          color: #fff;
          padding-bottom: 1rem;
      }
+
      /* trang gioi thieu */
      /* Đặt CSS chung cho các phần */
      .main {

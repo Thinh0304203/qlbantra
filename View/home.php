@@ -4,12 +4,10 @@ $dir = "../image/image_bg/";
 
 // Duyệt thư mục để lấy tất cả các file ảnh (jpg, png, jpeg, gif)
 $images = glob($dir . "*.{jpg,png,jpeg,gif}", GLOB_BRACE);
-
 // Kiểm tra nếu thư mục có ảnh hay không
 if (count($images) == 0) {
     $images = ["../image/default.jpg"]; // Đặt ảnh mặc định nếu không có ảnh
 }
-
 // Trả về danh sách ảnh dưới dạng JSON để JavaScript có thể sử dụng
 ?>
 <!DOCTYPE html>
@@ -39,48 +37,44 @@ if (count($images) == 0) {
         </section>
 
         <!-- Các phần khác trên trang -->
+        <?php
+        include '../Model/connect.php';
+
+        $sql = "SELECT id_sanpham, ten_sanpham, image, gia, thongtinchitiet_sanpham FROM sanpham ORDER BY id_sanpham DESC LIMIT 5";
+        $result = $conn->query($sql);
+
+        $products = [];
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $products[] = $row;  // Lưu trữ các sản phẩm vào mảng
+            }
+        } else {
+            echo "Không có sản phẩm nào.";
+        }
+        ?>
         <section class="thumb">
             <div class="box-container">
-                <div class="box">
-                    <img src="../image/thumb2.jpg">
-                    <h3>Trà Xanh</h3>
-                    <p>Một tách trà mỗi ngày xua tan lo lắng, không có rắc rối nào quá lớn hoặc nghiêm trọng mà không thể giảm bớt bằng một tách trà ngon.</p>
-                    <i class="bx bx-chevron-right"></i>
-                </div>
-                <div class="box">
-                    <img src="../image/thumb0.jpg">
-                    <h3>Trà Tranh</h3>
-                    <p>Một tách trà mỗi ngày xua tan lo lắng, không có rắc rối nào quá lớn hoặc nghiêm trọng mà không thể giảm bớt bằng một tách trà ngon.</p>
-                    <i class="bx bx-chevron-right"></i>
-                </div>
-                <div class="box">
-                    <img src="../image/thumb1.jpg">
-                    <h3>Trà Đen</h3>
-                    <p>Một tách trà mỗi ngày xua tan lo lắng, không có rắc rối nào quá lớn hoặc nghiêm trọng mà không thể giảm bớt bằng một tách trà ngon.</p>
-                    <i class="bx bx-chevron-right"></i>
-                </div>
-                <div class="box">
-                    <img src="../image/thumb2.jpg">
-                    <h3>Trà Túi Lọc</h3>
-                    <p>Một tách trà mỗi ngày xua tan lo lắng, không có rắc rối nào quá lớn hoặc nghiêm trọng mà không thể giảm bớt bằng một tách trà ngon.</p>
-                    <i class="bx bx-chevron-right"></i>
-                </div>
+                <?php
+                // Lặp qua từng sản phẩm và hiển thị thông tin
+                foreach ($products as $product) {
+                ?>
+                    <div class="box">
+                        <a href="chitietsp.php?id=<?php echo $product['id_sanpham']; ?>"> <!-- Link đến trang chi tiết sản phẩm -->
+                            <img src="../image/image_sp/<?php echo $product['image']; ?>" alt="<?php echo $product['ten_sanpham']; ?>">
+                            <h3><?php echo $product['ten_sanpham']; ?></h3>
+                            <p><?php echo $product['thongtinchitiet_sanpham']; ?></p> <!-- Nếu có mô tả chi tiết -->
+                            <div class="price"><?php echo number_format($product['gia'], 0, ',', '.'); ?> VND</div>
+                        </a>
+                    </div>
+                <?php
+                }
+                ?>
             </div>
         </section>
+        <section class = "box11">
 
-        <section class="container">
-            <div class="box-container">
-                <div class="box">
-                    <img src="../image/about-us.jpg">
-                </div>
-                <div class="box">
-                    <img src="../image/download.png">
-                    <span>Trà Tốt Cho Sức Khỏe</span>
-                    <h1>Tiết Kiệm tới 50%</h1>
-                    <p>Một tách trà mỗi ngày xua tan lo lắng, không có rắc rối nào quá lớn hoặc nghiêm trọng mà không thể giảm bớt bằng một tách trà ngon.</p>
-                </div>
-            </div>
         </section>
+        
 
         <!-- ------------- Shop ----------------- -->
         <section class="shop">

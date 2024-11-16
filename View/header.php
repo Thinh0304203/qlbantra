@@ -3,8 +3,6 @@ include('../Model/connect.php');
 
 // Kiểm tra xem người dùng đã đăng nhập chưa
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
-$_SESSION['search'] = $_GET['timkiem'];
-
 include('../Model/control_dm.php');
 $data_dm = new data_dm();
 $dm_list = $data_dm->select_dm(); // Lấy tất cả danh mục
@@ -15,7 +13,7 @@ $dm_list = $data_dm->select_dm(); // Lấy tất cả danh mục
     <link rel="stylesheet" href="../CSS/nutxo.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-        
+
     <div class="flex">
         <a href="/View/home.php" class="logo"><img src="../image/logo.jpg"></a>
         <nav class="navbar">
@@ -41,11 +39,13 @@ $dm_list = $data_dm->select_dm(); // Lấy tất cả danh mục
         </nav>
 
         <div class="search-container">
-                <input name ="timkiem" placeholder="Tìm kiếm..." size="30px" type="text"/>
-                <button type="submittk">
+            <form action="search.php" method="get">
+                <input type="text" name="timkiem" placeholder="Tìm kiếm sản phẩm..." size="30px" value="<?php echo isset($_GET['timkiem']) ? htmlspecialchars($_GET['timkiem']) : ''; ?>" required>
+                <button type="submit">
                     <i class="fas fa-search" style="color: black;"></i>
                 </button>
-            </div>
+            </form>
+        </div>
 
         <?php
         // Kiểm tra giỏ hàng của người dùng
